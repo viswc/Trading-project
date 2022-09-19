@@ -1,0 +1,22 @@
+<html>
+ <body>
+
+ 	<div style="border: 2px solid black; margin: 20px; padding: 20px;">
+ 	   Upload new csv file: <a href="{% url 'Internship:upload' %}">Upload</a>
+ 	</div>
+
+ 	{% for candle in candles %}
+
+ 	<div style="border: 2px solid black; margin: 20px; padding: 20px;">
+ 	  <b>ID: {{ candle.id}}, CLOSE: {{ candle.close }}, VOLUME: {{ candle.volume }}, HIGH: {{ candle.high }}, OPEN: {{ candle.openl }}, DATE: {{ candle.date }} </b><br>
+ 	  CSV: <a href='{{ candle.csv.url }}'>download</a> |
+ 	  JSON: <a href='/{{ candle.json }}'>download</a>
+ 	</div>
+
+ 	{% empty %}
+ 	<div style="border: 2px solid black; margin: 20px; padding: 20px;">
+ 		No uploaded files till now !
+ 	</div>
+ 	{% endfor %}
+ </body>
+</html>

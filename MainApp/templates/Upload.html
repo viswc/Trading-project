@@ -1,0 +1,13 @@
+<html>
+ <body>
+
+    <p style="margin: 20px; padding: 20px;">Upload your CSV file here.</p>
+    <div style="border: 2px solid black; margin: 20px; padding: 20px;">
+     	<form action="" enctype='multipart/form-data' method="post">
+          {% csrf_token %}
+          <input type="file" id="myFile" name="csvfile">
+          <input type="submit">
+        </form>
+    </div>
+ </body>
+</html>
